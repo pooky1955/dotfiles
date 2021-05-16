@@ -1,0 +1,78 @@
+
+general {
+    interval 	    = 1
+    colors 	    = true
+    color_good      = '#88b090'
+    color_degraded  = '#ccdc90'
+    color_bad       = '#e89393'
+}
+
+order += "volume master"
+order += "disk /"
+#order += "disk /home"
+#order += "run_watch DHCP"
+#order += "ipv6"
+#order += "run_watch VPN"
+#order += "wireless wlp3s0"
+#order += "ethernet enp2s0"
+order += "battery 0"
+#order += "cpu_temperature 0"
+order += "cpu_usage 0"
+order += "load"
+order += "tztime local"
+
+wireless wlp3s0 {
+    format_up = "%quality   %essid %ip"
+    format_down = "Not connected"
+}
+
+ethernet enp2s0 {
+
+}
+
+
+battery 0 {
+    format = "%status %percentage %remaining"
+    format_down = "down"
+    last_full_capacity = true
+    integer_battery_capacity = true
+    low_threshold = 11
+    threshold_type = percentage
+    hide_seconds = true
+    path = "/sys/class/power_supply/BAT1/uevent"
+    status_chr = " "
+    status_bat = " "
+    status_unk = " "
+    status_full = " "
+}
+
+
+tztime local {
+    format = "  %A %e %B   %H:%M:%S"
+}
+
+load {
+    format = " %1min"
+}
+
+cpu_usage {
+    format = " %usage"
+}
+
+
+
+disk "/" {
+	format = " %avail"
+	prefix_type	= custom
+	low_threshold = 20
+	threshold_type = percentage_avail
+}
+
+volume master {
+    format = "%volume  "
+    format_muted = " "
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
