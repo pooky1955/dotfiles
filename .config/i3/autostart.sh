@@ -5,4 +5,3 @@ picom -b &
 copyq &
 gtk-redshift &
 feh --bg-fill ~/Pictures/nord.jpeg
-brightnessctl set 180
