@@ -109,7 +109,7 @@ bindsym $mod+Shift-a focus child
 bindsym $mod+Shift+f exec firefox
 
 # cycle keyboard layouts
-bindsym $mod+Shift+Tab exec ./i3-keyboard-layout cycle 'us' 'us dvp' 'ca fr' && ~/keyboard-settings.sh
+bindsym $mod+Shift+Tab exec ~/.config/i3/i3-keyboard-layout cycle 'us' 'us dvp' 'ca fr' && ~/.config/i3/keyboard-settings.sh
 
 # my rofi!
 bindsym $mod+Tab exec rofi -show window -show-icons -icon-theme "Papirus" -font "Fira Code Nerd Font 12" -fuzzy
@@ -233,7 +233,7 @@ bar {
     font pango:FiraCode Nerd Font,Economica, FontAwesome 14
     separator_symbol " - "
 
-    status_command i3status | ./i3-keyboard-layout i3status | ~/show-gpu-used
+    status_command i3status | ./.config/i3/i3-keyboard-layout i3status | ~/.config/i3/show-gpu-used
     height 30
     colors {
         background          $bg

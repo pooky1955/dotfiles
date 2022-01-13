@@ -103,7 +103,6 @@ Plug 'junegunn/limelight.vim'
 Plug 'christoomey/vim-tmux-navigator'
 "For embedding in firefox
 Plug 'neovimhaskell/haskell-vim'
-Plug 'Yggdroot/indentLine'
 
 " Collaboration goodness
 Plug 'jbyuki/instant.nvim'
